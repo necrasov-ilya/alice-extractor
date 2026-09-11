@@ -10,7 +10,12 @@ import torch
 from safetensors import safe_open
 from safetensors.torch import save_file
 
-from alice_extractor.quantization import is_expert_tensor, quantize_int8_per_row, quantize_shard
+from alice_extractor.quantization import (
+    is_expert_tensor,
+    quantize_int8_per_row,
+    quantize_shard,
+    write_release_metadata,
+)
 
 
 class QuantizationTest(unittest.TestCase):
@@ -68,6 +73,38 @@ class QuantizationTest(unittest.TestCase):
                     torch.float32,
                 )
                 self.assertEqual(checkpoint.get_tensor(dense_name).dtype, torch.bfloat16)
+
+    def test_writes_release_metadata_for_quantized_shards(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            model_dir = root / "model"
+            output_dir = root / "weights"
+            model_dir.mkdir()
+            output_dir.mkdir()
+            (model_dir / "model.safetensors.index.json").write_text(
+                '{"metadata":{"total_parameters":6},"weight_map":{}}\n',
+                encoding="utf-8",
+            )
+            shard = output_dir / "quant_model-00001-of-00001.safetensors"
+            save_file(
+                {
+                    "layer.weight": torch.ones(2, 2, dtype=torch.bfloat16),
+                    "layer.weight_scale": torch.ones(2, dtype=torch.float32),
+                },
+                shard,
+            )
+
+            manifest = write_release_metadata(
+                model_dir=model_dir,
+                output_dir=output_dir,
+                base_model="owner/base",
+                revision="abc123",
+            )
+
+            self.assertEqual(manifest["shard_count"], 1)
+            self.assertEqual(manifest["tensor_count"], 2)
+            self.assertTrue((output_dir / "quant_model.safetensors.index.json").is_file())
+            self.assertIn(shard.name, (output_dir / "SHA256SUMS").read_text())
 
 
 if __name__ == "__main__":

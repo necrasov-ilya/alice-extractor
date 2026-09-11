@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import gc
+import hashlib
 import json
 import time
 from dataclasses import dataclass
@@ -16,6 +17,23 @@ from safetensors.torch import save_file
 
 
 DEFAULT_REPO_ID = "yandex/AliceAI-T5-35B-A0.6B"
+CHECKPOINT_FORMAT = "alice-extractor-mixed-int8-bf16-v1"
+RUNTIME_URL = "https://github.com/necrasov-ilya/alice-extractor"
+_DTYPE_BYTES = {
+    "BOOL": 1,
+    "I8": 1,
+    "U8": 1,
+    "I16": 2,
+    "U16": 2,
+    "F16": 2,
+    "BF16": 2,
+    "I32": 4,
+    "U32": 4,
+    "F32": 4,
+    "I64": 8,
+    "U64": 8,
+    "F64": 8,
+}
 METADATA_PATTERNS = (
     ".gitattributes",
     "CONTRIBUTING.md",
@@ -107,6 +125,105 @@ def quantize_shard(source: Path, destination: Path) -> tuple[int, int]:
     return expert_count, preserved_count
 
 
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        while chunk := source.read(8 * 1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _tensor_bytes(shape: list[int], dtype: str) -> int:
+    try:
+        item_size = _DTYPE_BYTES[dtype]
+    except KeyError as error:
+        raise ValueError(f"unsupported Safetensors dtype in release metadata: {dtype}") from error
+    elements = 1
+    for dimension in shape:
+        elements *= dimension
+    return elements * item_size
+
+
+def write_release_metadata(
+    *,
+    model_dir: Path,
+    output_dir: Path,
+    base_model: str,
+    revision: str,
+) -> dict[str, object]:
+    """Write a loadable shard index, checksums, and a public format manifest."""
+
+    source_index_path = model_dir / "model.safetensors.index.json"
+    source_index = json.loads(source_index_path.read_text(encoding="utf-8"))
+    source_metadata = source_index.get("metadata", {})
+    shards = sorted(output_dir.glob("quant_model-*.safetensors"))
+    if not shards:
+        raise FileNotFoundError(f"no quantized shards found in {output_dir}")
+
+    weight_map: dict[str, str] = {}
+    total_size = 0
+    shard_records: list[dict[str, object]] = []
+    checksum_lines: list[str] = []
+    for shard in shards:
+        tensor_count = 0
+        scale_tensor_count = 0
+        with safe_open(shard, framework="pt") as checkpoint:
+            for name in checkpoint.keys():
+                if name in weight_map:
+                    raise ValueError(f"tensor appears in more than one shard: {name}")
+                tensor = checkpoint.get_slice(name)
+                weight_map[name] = shard.name
+                total_size += _tensor_bytes(tensor.get_shape(), tensor.get_dtype())
+                tensor_count += 1
+                scale_tensor_count += int(name.endswith("_scale"))
+
+        checksum = _sha256(shard)
+        checksum_lines.append(f"{checksum}  {shard.name}")
+        shard_records.append(
+            {
+                "file": shard.name,
+                "size_bytes": shard.stat().st_size,
+                "sha256": checksum,
+                "tensor_count": tensor_count,
+                "scale_tensor_count": scale_tensor_count,
+            }
+        )
+
+    checkpoint_index = {
+        "metadata": {
+            "format": CHECKPOINT_FORMAT,
+            "total_parameters": source_metadata.get("total_parameters"),
+            "total_size": total_size,
+        },
+        "weight_map": weight_map,
+    }
+    (output_dir / "quant_model.safetensors.index.json").write_text(
+        json.dumps(checkpoint_index, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (output_dir / "SHA256SUMS").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
+
+    manifest = {
+        "format": CHECKPOINT_FORMAT,
+        "base_model": base_model,
+        "resolved_revision": revision,
+        "runtime": RUNTIME_URL,
+        "expert_tensors": "w1, v1 and w2 under .mlp.experts.mlp.",
+        "expert_quantization": "symmetric int8 per output row",
+        "scale_dtype": "float32",
+        "non_expert_dtype": "preserved from the source checkpoint",
+        "shard_count": len(shards),
+        "tensor_count": len(weight_map),
+        "checkpoint_size_bytes": total_size,
+        "shards": shard_records,
+    }
+    (output_dir / "quantization_config.json").write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return manifest
+
+
 def prepare_checkpoint(options: QuantizationOptions) -> dict[str, object]:
     options.source_dir.mkdir(parents=True, exist_ok=True)
     options.output_dir.mkdir(parents=True, exist_ok=True)
@@ -152,20 +269,19 @@ def prepare_checkpoint(options: QuantizationOptions) -> dict[str, object]:
             }
         )
 
-    manifest = {
-        "format": "alice-extractor-mixed-int8-bf16-v1",
-        "base_model": options.repo_id,
-        "requested_revision": options.revision,
-        "resolved_revision": resolved_revision,
-        "expert_selection": "names ending in .w1, .v1, or .w2 under .mlp.experts.mlp.",
-        "expert_quantization": "symmetric int8 per output row",
-        "non_expert_dtype": "preserved from source checkpoint",
-        "shard_count": len(shards),
-        "elapsed_seconds": time.perf_counter() - started,
-        "shards": completed,
-    }
-    manifest_path = options.output_dir / "quantization_config.json"
-    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    manifest = write_release_metadata(
+        model_dir=options.model_dir,
+        output_dir=options.output_dir,
+        base_model=options.repo_id,
+        revision=resolved_revision,
+    )
+    manifest["requested_revision"] = options.revision
+    manifest["elapsed_seconds"] = time.perf_counter() - started
+    manifest["preparation"] = completed
+    (options.output_dir / "quantization_config.json").write_text(
+        json.dumps(manifest, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return manifest
 
 
@@ -219,4 +335,5 @@ __all__ = [
     "prepare_checkpoint",
     "quantize_int8_per_row",
     "quantize_shard",
+    "write_release_metadata",
 ]

@@ -6,7 +6,7 @@
 
 ## Репозитории
 
-- [AliceAI-T5-35B-A0.6B-MPS-ExpertInt8](https://huggingface.co/necrasov-ilya/AliceAI-T5-35B-A0.6B-MPS-ExpertInt8) — производные веса для MPS. Карточка опубликована, веса появятся после проверки качества.
+- [AliceAI-T5-35B-A0.6B-MPS-ExpertInt8](https://huggingface.co/necrasov-ilya/AliceAI-T5-35B-A0.6B-MPS-ExpertInt8) — смешанные веса int8/BF16 для MPS.
 - [ru-invoice-extraction-benchmark](https://huggingface.co/datasets/necrasov-ilya/ru-invoice-extraction-benchmark) — 50 синтетических счетов с эталонным JSON.
 
 ## Что уже работает
@@ -39,10 +39,18 @@ uv pip install --python .venv/bin/python -e .
 
 ## Запуск
 
+Готовую контрольную точку можно скачать с Hugging Face:
+
+```bash
+.venv/bin/hf download \
+  necrasov-ilya/AliceAI-T5-35B-A0.6B-MPS-ExpertInt8 \
+  --local-dir local/aliceai-t5/release
+```
+
 ```bash
 .venv/bin/alice-extractor \
-  --model-dir local/aliceai-t5/model \
-  --weights-dir local/aliceai-t5/data/int8 \
+  --model-dir local/aliceai-t5/release \
+  --weights-dir local/aliceai-t5/release \
   "Кто написал роман Война и мир?"
 ```
 
@@ -59,12 +67,6 @@ uv pip install --python .venv/bin/python -e .
 ```bash
 .venv/bin/alice-validate-dataset
 ```
-
-## Предварительный результат на M1 Max
-
-В одном прогретом запуске с 57 входными и 17 выходными токенами полный проход сократился с 10,282 до 2,561 секунды. Кодирование стало быстрее в 5,54 раза, первый проход декодера — в 4,80 раза. Скорость дальнейшего декодирования почти не изменилась: 19,11 против 19,59 токена в секунду.
-
-Это замер исполняемого пути, а не итог качества модели. Исходные данные находятся в [benchmarks/results/m1-max-64gb-runtime.json](benchmarks/results/m1-max-64gb-runtime.json).
 
 ## Локальные файлы
 
