@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ВЕ-049/10",
+  "invoice_date": "2026-10-29",
+  "supplier": {
+    "name": "ИП Власова Елена Николаевна",
+    "tax_id": "781412345678"
+  },
+  "buyer": {
+    "name": "ООО Морской Порт Сервис",
+    "tax_id": "2538123456"
+  },
+  "currency": "EUR",
+  "subtotal": 655.0,
+  "vat_amount": 0.0,
+  "total_amount": 655.0,
+  "line_items": [
+    {
+      "description": "Проверка спасательных жилетов",
+      "quantity": 24.0,
+      "unit": "шт.",
+      "unit_price": 18.5,
+      "line_total": 444.0
+    },
+    {
+      "description": "Замена свистка сигнального",
+      "quantity": 24.0,
+      "unit": "шт.",
+      "unit_price": 2.75,
+      "line_total": 66.0
+    },
+    {
+      "description": "Выезд инспектора",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 145.0,
+      "line_total": 145.0
+    }
+  ]
+}

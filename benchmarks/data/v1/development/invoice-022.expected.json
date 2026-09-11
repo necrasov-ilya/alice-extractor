@@ -1,0 +1,47 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "АВ-77/09",
+  "invoice_date": "2026-09-16",
+  "supplier": {
+    "name": "ИП Крылова Марина Олеговна",
+    "tax_id": "667812345607"
+  },
+  "buyer": {
+    "name": "ООО Арктика Медиа",
+    "tax_id": "7805123456"
+  },
+  "currency": "RUB",
+  "subtotal": 54700.0,
+  "vat_amount": 0.0,
+  "total_amount": 54700.0,
+  "line_items": [
+    {
+      "description": "Печать рекламных буклетов формата А5 с полноцветной двусторонней печатью",
+      "quantity": 1000.0,
+      "unit": "шт.",
+      "unit_price": 24.5,
+      "line_total": 24500.0
+    },
+    {
+      "description": "Разработка макета буклета по фирменному стилю",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 18500.0,
+      "line_total": 18500.0
+    },
+    {
+      "description": "Нанесение матовой ламинации на тираж",
+      "quantity": 1000.0,
+      "unit": "шт.",
+      "unit_price": 8.5,
+      "line_total": 8500.0
+    },
+    {
+      "description": "Доставка тиража в два адреса заказчика",
+      "quantity": 1.0,
+      "unit": "доставка",
+      "unit_price": 3200.0,
+      "line_total": 3200.0
+    }
+  ]
+}

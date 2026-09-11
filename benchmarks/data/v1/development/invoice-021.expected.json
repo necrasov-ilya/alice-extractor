@@ -1,0 +1,54 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "СФ-2026/021",
+  "invoice_date": "2026-09-15",
+  "supplier": {
+    "name": "ООО Маяк Данных",
+    "tax_id": "6671456789"
+  },
+  "buyer": {
+    "name": "ООО Уральский Проект",
+    "tax_id": "6670456789"
+  },
+  "currency": "RUB",
+  "subtotal": 549900.0,
+  "vat_amount": 109980.0,
+  "total_amount": 659880.0,
+  "line_items": [
+    {
+      "description": "Комплект офисных кресел серии Орбита",
+      "quantity": 12.0,
+      "unit": "шт.",
+      "unit_price": 18500.0,
+      "line_total": 222000.0
+    },
+    {
+      "description": "Стол рабочий с электрической регулировкой высоты",
+      "quantity": 6.0,
+      "unit": "шт.",
+      "unit_price": 32400.0,
+      "line_total": 194400.0
+    },
+    {
+      "description": "Монтаж мебели на площадке заказчика",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 45000.0,
+      "line_total": 45000.0
+    },
+    {
+      "description": "Доставка по Екатеринбургу",
+      "quantity": 1.0,
+      "unit": "рейс",
+      "unit_price": 12500.0,
+      "line_total": 12500.0
+    },
+    {
+      "description": "Сопровождение корпоративного портала и консультации пользователей",
+      "quantity": 2.0,
+      "unit": "месяца",
+      "unit_price": 38000.0,
+      "line_total": 76000.0
+    }
+  ]
+}

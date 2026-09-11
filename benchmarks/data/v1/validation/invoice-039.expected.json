@@ -1,0 +1,33 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "16-Р/26",
+  "invoice_date": "2026-04-10",
+  "supplier": {
+    "name": "ООО Мастерская бережного ремонта",
+    "tax_id": "6678123457"
+  },
+  "buyer": {
+    "name": "ИП Белова Нина Андреевна",
+    "tax_id": "667812345681"
+  },
+  "currency": "RUB",
+  "subtotal": 21950.00,
+  "vat_amount": 0.00,
+  "total_amount": 21950.00,
+  "line_items": [
+    {
+      "description": "Реставрация деревянной стойки ресепшена",
+      "quantity": 1.50,
+      "unit": "квадратный метр",
+      "unit_price": 12500.00,
+      "line_total": 18750.00
+    },
+    {
+      "description": "Выезд мастера и доставка защитного покрытия",
+      "quantity": 1.00,
+      "unit": "услуга",
+      "unit_price": 3200.00,
+      "line_total": 3200.00
+    }
+  ]
+}

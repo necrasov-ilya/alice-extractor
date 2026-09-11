@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "УП-012/26",
+  "invoice_date": "2026-02-03",
+  "supplier": {
+    "name": "ООО Книжный Маяк",
+    "tax_id": "1659342708"
+  },
+  "buyer": {
+    "name": "ООО Школа Горизонт",
+    "tax_id": "7708431620"
+  },
+  "currency": "RUB",
+  "subtotal": 52700.0,
+  "vat_amount": 5270.0,
+  "total_amount": 57970.0,
+  "line_items": [
+    {
+      "description": "Набор учебных пособий Практикум-6",
+      "quantity": 25.0,
+      "unit": "комплект",
+      "unit_price": 1240.0,
+      "line_total": 31000.0
+    },
+    {
+      "description": "Печатная рабочая тетрадь Лаборатория",
+      "quantity": 40.0,
+      "unit": "шт.",
+      "unit_price": 380.0,
+      "line_total": 15200.0
+    },
+    {
+      "description": "Доставка до склада покупателя",
+      "quantity": 1.0,
+      "unit": "рейс",
+      "unit_price": 6500.0,
+      "line_total": 6500.0
+    }
+  ]
+}

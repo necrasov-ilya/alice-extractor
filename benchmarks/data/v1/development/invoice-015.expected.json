@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ПР-015/26",
+  "invoice_date": "2026-03-27",
+  "supplier": {
+    "name": "ООО Добрый Урожай",
+    "tax_id": "2309124806"
+  },
+  "buyer": {
+    "name": "ООО Логистик Парк 17",
+    "tax_id": "5258126407"
+  },
+  "currency": "RUB",
+  "subtotal": 106500.0,
+  "vat_amount": 16100.0,
+  "total_amount": 122600.0,
+  "line_items": [
+    {
+      "description": "Пюре фруктовое Яблочный сад",
+      "quantity": 80.0,
+      "unit": "упаковка",
+      "unit_price": 650.0,
+      "line_total": 52000.0
+    },
+    {
+      "description": "Термоконтейнер Полюс-12",
+      "quantity": 4.0,
+      "unit": "шт.",
+      "unit_price": 12500.0,
+      "line_total": 50000.0
+    },
+    {
+      "description": "Экспресс-доставка с температурным режимом",
+      "quantity": 1.0,
+      "unit": "доставка",
+      "unit_price": 4500.0,
+      "line_total": 4500.0
+    }
+  ]
+}

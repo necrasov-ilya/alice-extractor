@@ -1,0 +1,7 @@
+# Versions verified in the existing local AliceAI environment on Apple Silicon.
+torch==2.10.0
+transformers==5.14.1
+safetensors==0.8.0
+accelerate==1.14.0
+huggingface-hub==1.31.0
+jsonschema==4.25.1

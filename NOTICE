@@ -1,0 +1,14 @@
+Alice Extractor
+
+This project uses Yandex AliceAI-T5-35B-A0.6B as an independently distributed
+base model. AliceAI-T5 model code and artifacts are Copyright 2026 YANDEX LLC
+and are provided under the Apache License, Version 2.0, together with the
+export-control notice distributed by Yandex.
+
+The Alice Extractor repository does not include the AliceAI-T5 base weights.
+Users obtain the model from its official distribution and remain responsible
+for compliance with applicable licenses, notices, and export-control rules.
+
+Alice Extractor is an independent project and is not affiliated with or
+endorsed by Yandex.
+

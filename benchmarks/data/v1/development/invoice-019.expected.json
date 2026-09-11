@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ОП-019/26",
+  "invoice_date": "2026-05-19",
+  "supplier": {
+    "name": "ООО Оптика Связи",
+    "tax_id": "3445127096"
+  },
+  "buyer": {
+    "name": "ООО Городские Линии",
+    "tax_id": "7805456213"
+  },
+  "currency": "RUB",
+  "subtotal": 201646.2,
+  "vat_amount": 40329.24,
+  "total_amount": 241975.44,
+  "line_items": [
+    {
+      "description": "Кабель оптический Волна-24",
+      "quantity": 1250.5,
+      "unit": "м",
+      "unit_price": 92.4,
+      "line_total": 115546.2
+    },
+    {
+      "description": "Муфта соединительная Стык-М",
+      "quantity": 18.0,
+      "unit": "шт.",
+      "unit_price": 1450.0,
+      "line_total": 26100.0
+    },
+    {
+      "description": "Монтаж кабельной линии",
+      "quantity": 16.0,
+      "unit": "час",
+      "unit_price": 3750.0,
+      "line_total": 60000.0
+    }
+  ]
+}

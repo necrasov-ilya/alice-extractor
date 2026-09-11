@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "АР-017/04-26",
+  "invoice_date": "2026-04-21",
+  "supplier": {
+    "name": "ООО Белый Ангар",
+    "tax_id": "5406329874"
+  },
+  "buyer": {
+    "name": "ООО Сибирский Резерв",
+    "tax_id": "7017342086"
+  },
+  "currency": "RUB",
+  "subtotal": 141630.0,
+  "vat_amount": 28326.0,
+  "total_amount": 169956.0,
+  "line_items": [
+    {
+      "description": "Аренда складской площади",
+      "quantity": 245.5,
+      "unit": "м²",
+      "unit_price": 480.0,
+      "line_total": 117840.0
+    },
+    {
+      "description": "Электроэнергия по прибору учета",
+      "quantity": 1840.0,
+      "unit": "кВт·ч",
+      "unit_price": 9.75,
+      "line_total": 17940.0
+    },
+    {
+      "description": "Водоотведение",
+      "quantity": 32.5,
+      "unit": "м³",
+      "unit_price": 180.0,
+      "line_total": 5850.0
+    }
+  ]
+}

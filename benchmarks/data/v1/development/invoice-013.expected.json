@@ -1,0 +1,33 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "АР-013",
+  "invoice_date": "2026-02-20",
+  "supplier": {
+    "name": "ООО Тихий Двор",
+    "tax_id": "7812459036"
+  },
+  "buyer": {
+    "name": "ООО Бюро Меридиан",
+    "tax_id": "6167314085"
+  },
+  "currency": "RUB",
+  "subtotal": 47000.0,
+  "vat_amount": 0.0,
+  "total_amount": 47000.0,
+  "line_items": [
+    {
+      "description": "Аренда переговорной комнаты Север",
+      "quantity": 5.0,
+      "unit": "дня",
+      "unit_price": 8500.0,
+      "line_total": 42500.0
+    },
+    {
+      "description": "Уборка помещения после мероприятий",
+      "quantity": 5.0,
+      "unit": "услуг",
+      "unit_price": 900.0,
+      "line_total": 4500.0
+    }
+  ]
+}

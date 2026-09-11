@@ -1,0 +1,54 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "77-ЭК/26",
+  "invoice_date": "2026-02-12",
+  "supplier": {
+    "name": "ООО Лаборатория Северных Систем",
+    "tax_id": "6678123456"
+  },
+  "buyer": {
+    "name": "ИП Воронцов Артём Сергеевич",
+    "tax_id": "667812345678"
+  },
+  "currency": "RUB",
+  "subtotal": 93385.00,
+  "vat_amount": 18677.00,
+  "total_amount": 112062.00,
+  "line_items": [
+    {
+      "description": "Аудит серверной инфраструктуры и сетевых политик",
+      "quantity": 1.00,
+      "unit": "услуга",
+      "unit_price": 48500.00,
+      "line_total": 48500.00
+    },
+    {
+      "description": "Настройка системы мониторинга и уведомлений",
+      "quantity": 2.50,
+      "unit": "час",
+      "unit_price": 8400.00,
+      "line_total": 21000.00
+    },
+    {
+      "description": "Подготовка эксплуатационной документации",
+      "quantity": 1.00,
+      "unit": "услуга",
+      "unit_price": 15800.00,
+      "line_total": 15800.00
+    },
+    {
+      "description": "Обучение административного персонала заказчика",
+      "quantity": 0.50,
+      "unit": "день",
+      "unit_price": 26000.00,
+      "line_total": 13000.00
+    },
+    {
+      "description": "Скидка постоянному заказчику, 5 процентов",
+      "quantity": 1.00,
+      "unit": "услуга",
+      "unit_price": -4915.00,
+      "line_total": -4915.00
+    }
+  ]
+}

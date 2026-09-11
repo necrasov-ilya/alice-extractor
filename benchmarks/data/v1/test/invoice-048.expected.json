@@ -1,0 +1,61 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ТП-048",
+  "invoice_date": "2026-10-21",
+  "supplier": {
+    "name": "ООО ТеплоПроект",
+    "tax_id": "5259123456"
+  },
+  "buyer": {
+    "name": "АО Новая Энергия",
+    "tax_id": "7709123457"
+  },
+  "currency": "RUB",
+  "subtotal": 458640.0,
+  "vat_amount": 45864.0,
+  "total_amount": 504504.0,
+  "line_items": [
+    {
+      "description": "Тепловой насос TH-12",
+      "quantity": 1.0,
+      "unit": "шт.",
+      "unit_price": 284000.0,
+      "line_total": 284000.0
+    },
+    {
+      "description": "Буферная емкость 500 л",
+      "quantity": 2.0,
+      "unit": "шт.",
+      "unit_price": 63800.0,
+      "line_total": 127600.0
+    },
+    {
+      "description": "Комплект фитингов",
+      "quantity": 1.0,
+      "unit": "комплект",
+      "unit_price": 19600.0,
+      "line_total": 19600.0
+    },
+    {
+      "description": "Пусконаладочные работы",
+      "quantity": 2.0,
+      "unit": "день",
+      "unit_price": 14500.0,
+      "line_total": 29000.0
+    },
+    {
+      "description": "Доставка и разгрузка",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 7800.0,
+      "line_total": 7800.0
+    },
+    {
+      "description": "Скидка за комплектную поставку 2 процента",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": -9360.0,
+      "line_total": -9360.0
+    }
+  ]
+}

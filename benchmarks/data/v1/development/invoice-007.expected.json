@@ -1,0 +1,41 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "АС-812",
+  "invoice_date": "2025-08-12",
+  "supplier": {
+    "name": "ООО Альфа-Станок",
+    "tax_id": "5407013002"
+  },
+  "buyer": {
+    "name": "ООО Мастерская Формат",
+    "tax_id": "772501400013"
+  },
+  "currency": "RUB",
+  "subtotal": 36837.4,
+  "vat_amount": 7367.48,
+  "total_amount": 44204.88,
+  "line_items": [
+    {
+      "description": "Лист алюминиевый анодированный, толщина 2 мм",
+      "quantity": 85.5,
+      "unit": "кг",
+      "unit_price": 312.8,
+      "line_total": 26744.4
+    },
+    {
+      "description": "Профиль алюминиевый 20x20 мм, анодированный",
+      "quantity": 46,
+      "unit": "м",
+      "unit_price": 188.5,
+      "line_total": 8671
+    },
+    {
+      "description": "Крепежный комплект М6 для монтажного профиля",
+      "quantity": 15,
+      "unit": "компл.",
+      "unit_price": 94.8,
+      "line_total": 1422
+    }
+  ]
+}
+

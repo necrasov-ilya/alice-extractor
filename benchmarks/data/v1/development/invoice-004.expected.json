@@ -1,0 +1,34 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ДИЗ-04-25",
+  "invoice_date": "2025-04-07",
+  "supplier": {
+    "name": "ООО Дизайн Линия",
+    "tax_id": "7721997007"
+  },
+  "buyer": {
+    "name": "ООО Пакет-Сервис",
+    "tax_id": "5024998008"
+  },
+  "currency": "RUB",
+  "subtotal": 82500,
+  "vat_amount": 0,
+  "total_amount": 82500,
+  "line_items": [
+    {
+      "description": "Разработка макета упаковки для основной линейки",
+      "quantity": 1,
+      "unit": "усл.",
+      "unit_price": 68000,
+      "line_total": 68000
+    },
+    {
+      "description": "Подготовка файлов для типографии и контроль цветового профиля",
+      "quantity": 1,
+      "unit": "комплект",
+      "unit_price": 14500,
+      "line_total": 14500
+    }
+  ]
+}
+

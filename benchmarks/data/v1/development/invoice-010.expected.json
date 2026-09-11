@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "07-09/25",
+  "invoice_date": "2025-09-09",
+  "supplier": {
+    "name": "АО Сибирский Форум",
+    "tax_id": "525701900019"
+  },
+  "buyer": {
+    "name": "ООО Профиль-Мероприятия",
+    "tax_id": "6670020008"
+  },
+  "currency": "RUB",
+  "subtotal": 50224,
+  "vat_amount": 10044.8,
+  "total_amount": 60268.8,
+  "line_items": [
+    {
+      "description": "Аренда переговорной комнаты с оборудованием",
+      "quantity": 14,
+      "unit": "час",
+      "unit_price": 1850,
+      "line_total": 25900
+    },
+    {
+      "description": "Техническое сопровождение делового мероприятия",
+      "quantity": 6,
+      "unit": "час",
+      "unit_price": 3200,
+      "line_total": 19200
+    },
+    {
+      "description": "Комплект печатных материалов участника",
+      "quantity": 35,
+      "unit": "компл.",
+      "unit_price": 146.4,
+      "line_total": 5124
+    }
+  ]
+}

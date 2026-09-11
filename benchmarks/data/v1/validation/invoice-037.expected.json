@@ -1,0 +1,61 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "МОН-56/26",
+  "invoice_date": "2026-03-25",
+  "supplier": {
+    "name": "ООО Инженерный контур Восток",
+    "tax_id": "6679123456"
+  },
+  "buyer": {
+    "name": "ООО Производственный кооператив Меридиан",
+    "tax_id": "6604123456"
+  },
+  "currency": "RUB",
+  "subtotal": 118364.65,
+  "vat_amount": 23672.93,
+  "total_amount": 142037.58,
+  "line_items": [
+    {
+      "description": "Кабель силовой ВВГнг-LS 5×10",
+      "quantity": 128.50,
+      "unit": "метр",
+      "unit_price": 82.40,
+      "line_total": 10588.40
+    },
+    {
+      "description": "Лоток кабельный оцинкованный 100×50",
+      "quantity": 36.75,
+      "unit": "метр",
+      "unit_price": 315.00,
+      "line_total": 11576.25
+    },
+    {
+      "description": "Монтаж кабельной трассы",
+      "quantity": 42.00,
+      "unit": "час",
+      "unit_price": 1850.00,
+      "line_total": 77700.00
+    },
+    {
+      "description": "Маркировка линий и исполнительные бирки",
+      "quantity": 1.00,
+      "unit": "комплект",
+      "unit_price": 6800.00,
+      "line_total": 6800.00
+    },
+    {
+      "description": "Пусконаладка шкафа автоматики",
+      "quantity": 0.75,
+      "unit": "смена",
+      "unit_price": 9600.00,
+      "line_total": 7200.00
+    },
+    {
+      "description": "Доставка материалов на площадку",
+      "quantity": 1.00,
+      "unit": "рейс",
+      "unit_price": 4500.00,
+      "line_total": 4500.00
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "КМ-050/26",
+  "invoice_date": "2026-11-03",
+  "supplier": {
+    "name": "ООО Кристалл Медиа",
+    "tax_id": "1659123456"
+  },
+  "buyer": {
+    "name": "АО УралТехСнаб",
+    "tax_id": "6675123456"
+  },
+  "currency": "RUB",
+  "subtotal": 297800.0,
+  "vat_amount": 56180.0,
+  "total_amount": 353980.0,
+  "line_items": [
+    {
+      "description": "Аренда LED-экрана",
+      "quantity": 3.0,
+      "unit": "день",
+      "unit_price": 45000.0,
+      "line_total": 135000.0
+    },
+    {
+      "description": "Монтаж конструкции",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 68000.0,
+      "line_total": 68000.0
+    },
+    {
+      "description": "Работа оператора трансляции",
+      "quantity": 2.0,
+      "unit": "смена",
+      "unit_price": 24500.0,
+      "line_total": 49000.0
+    },
+    {
+      "description": "Печать баннерных полотен",
+      "quantity": 10.0,
+      "unit": "м²",
+      "unit_price": 1850.0,
+      "line_total": 18500.0
+    },
+    {
+      "description": "Услуги питания команды",
+      "quantity": 18.0,
+      "unit": "комплект",
+      "unit_price": 850.0,
+      "line_total": 15300.0
+    },
+    {
+      "description": "Доставка и возврат оборудования",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 12000.0,
+      "line_total": 12000.0
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "КН-731/26",
+  "invoice_date": "2026-04-02",
+  "supplier": {
+    "name": "ООО Издательство Северный свет",
+    "tax_id": "7812123456"
+  },
+  "buyer": {
+    "name": "ГБПОУ Колледж прикладных технологий",
+    "tax_id": "7803123456"
+  },
+  "currency": "RUB",
+  "subtotal": 75423.00,
+  "vat_amount": 7542.30,
+  "total_amount": 82965.30,
+  "line_items": [
+    {
+      "description": "Альбом практических заданий по дизайну",
+      "quantity": 18,
+      "unit": "экземпляр",
+      "unit_price": 1650.00,
+      "line_total": 29700.00
+    },
+    {
+      "description": "Книга Основы материаловедения для колледжей",
+      "quantity": 12,
+      "unit": "экземпляр",
+      "unit_price": 2350.00,
+      "line_total": 28200.00
+    },
+    {
+      "description": "Набор карточек для лабораторных работ",
+      "quantity": 25,
+      "unit": "комплект",
+      "unit_price": 640.00,
+      "line_total": 16000.00
+    },
+    {
+      "description": "Ламинированная карта-памятка по технике безопасности",
+      "quantity": 30,
+      "unit": "штука",
+      "unit_price": 160.00,
+      "line_total": 4800.00
+    },
+    {
+      "description": "Доставка тиража до колледжа",
+      "quantity": 1,
+      "unit": "услуга",
+      "unit_price": 2400.00,
+      "line_total": 2400.00
+    },
+    {
+      "description": "Скидка учебному учреждению, 7 процентов",
+      "quantity": 1,
+      "unit": "услуга",
+      "unit_price": -5677.00,
+      "line_total": -5677.00
+    }
+  ]
+}

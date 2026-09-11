@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "РАЗ-016",
+  "invoice_date": "2026-04-08",
+  "supplier": {
+    "name": "ИП Орехов Павел Ильич",
+    "tax_id": "590412347805"
+  },
+  "buyer": {
+    "name": "ООО Сфера Внутри",
+    "tax_id": "5407123864"
+  },
+  "currency": "RUB",
+  "subtotal": 147000.0,
+  "vat_amount": 0.0,
+  "total_amount": 147000.0,
+  "line_items": [
+    {
+      "description": "Разработка модуля интеграции",
+      "quantity": 18.0,
+      "unit": "час",
+      "unit_price": 5500.0,
+      "line_total": 99000.0
+    },
+    {
+      "description": "Функциональное тестирование",
+      "quantity": 7.5,
+      "unit": "час",
+      "unit_price": 4400.0,
+      "line_total": 33000.0
+    },
+    {
+      "description": "Передача настроек и эксплуатационных инструкций",
+      "quantity": 1.0,
+      "unit": "комплект",
+      "unit_price": 15000.0,
+      "line_total": 15000.0
+    }
+  ]
+}

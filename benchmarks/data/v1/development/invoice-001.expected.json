@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "СК-1047",
+  "invoice_date": "2025-02-14",
+  "supplier": {
+    "name": "ООО ЭлектроСевер",
+    "tax_id": "7812991001"
+  },
+  "buyer": {
+    "name": "ООО Вектор-Снаб",
+    "tax_id": "5406992002"
+  },
+  "currency": "RUB",
+  "subtotal": 46154,
+  "vat_amount": 9230.8,
+  "total_amount": 55384.8,
+  "line_items": [
+    {
+      "description": "Комплект светильников LED Aurora 36 Вт",
+      "quantity": 12,
+      "unit": "шт.",
+      "unit_price": 1850,
+      "line_total": 22200
+    },
+    {
+      "description": "Кабель силовой ВВГнг-LS 3x2,5",
+      "quantity": 125.5,
+      "unit": "м",
+      "unit_price": 148,
+      "line_total": 18574
+    },
+    {
+      "description": "Автоматический выключатель 16 А",
+      "quantity": 8,
+      "unit": "шт.",
+      "unit_price": 672.5,
+      "line_total": 5380
+    }
+  ]
+}

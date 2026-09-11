@@ -1,0 +1,33 @@
+# Local model repositories, weights, caches, and generated artifacts.
+/local/
+/artifacts/
+/work/
+
+# Model formats must never be committed accidentally.
+*.safetensors
+*.bin
+*.ckpt
+*.gguf
+*.onnx
+*.pt
+*.pth
+
+# Python environments and caches.
+.venv/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Secrets and local configuration.
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems.
+.DS_Store
+.idea/
+.vscode/

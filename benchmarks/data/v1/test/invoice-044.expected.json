@@ -1,0 +1,68 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "МС-044-К",
+  "invoice_date": "2026-10-01",
+  "supplier": {
+    "name": "ИП Соколов Артем Романович",
+    "tax_id": "165412345678"
+  },
+  "buyer": {
+    "name": "ООО Меридиан Строй",
+    "tax_id": "7811123457"
+  },
+  "currency": "CNY",
+  "subtotal": 11990.0,
+  "vat_amount": 0.0,
+  "total_amount": 11990.0,
+  "line_items": [
+    {
+      "description": "Перфоратор аккумуляторный",
+      "quantity": 4.0,
+      "unit": "шт.",
+      "unit_price": 1290.0,
+      "line_total": 5160.0
+    },
+    {
+      "description": "Батарея аккумуляторная 18 В",
+      "quantity": 8.0,
+      "unit": "шт.",
+      "unit_price": 360.0,
+      "line_total": 2880.0
+    },
+    {
+      "description": "Зарядное устройство",
+      "quantity": 4.0,
+      "unit": "шт.",
+      "unit_price": 220.0,
+      "line_total": 880.0
+    },
+    {
+      "description": "Набор буров SDS-plus",
+      "quantity": 6.0,
+      "unit": "набор",
+      "unit_price": 145.0,
+      "line_total": 870.0
+    },
+    {
+      "description": "Уровень лазерный",
+      "quantity": 2.0,
+      "unit": "шт.",
+      "unit_price": 760.0,
+      "line_total": 1520.0
+    },
+    {
+      "description": "Кейс транспортировочный",
+      "quantity": 4.0,
+      "unit": "шт.",
+      "unit_price": 95.0,
+      "line_total": 380.0
+    },
+    {
+      "description": "Доставка до строительной площадки",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 300.0,
+      "line_total": 300.0
+    }
+  ]
+}

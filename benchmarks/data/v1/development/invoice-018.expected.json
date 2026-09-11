@@ -1,0 +1,40 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ЛГ-018",
+  "invoice_date": "2026-05-06",
+  "supplier": {
+    "name": "ООО Маршрут Плюс",
+    "tax_id": "7721453098"
+  },
+  "buyer": {
+    "name": "АО Технояр",
+    "tax_id": "2468127304"
+  },
+  "currency": "RUB",
+  "subtotal": 38400.0,
+  "vat_amount": 7680.0,
+  "total_amount": 46080.0,
+  "line_items": [
+    {
+      "description": "Доставка сборного груза Москва–Красноярск",
+      "quantity": 2.75,
+      "unit": "тонна",
+      "unit_price": 8400.0,
+      "line_total": 23100.0
+    },
+    {
+      "description": "Погрузочно-разгрузочные работы",
+      "quantity": 6.5,
+      "unit": "час",
+      "unit_price": 1800.0,
+      "line_total": 11700.0
+    },
+    {
+      "description": "Страхование груза",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 3600.0,
+      "line_total": 3600.0
+    }
+  ]
+}

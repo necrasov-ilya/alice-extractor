@@ -1,0 +1,54 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "24/09-26",
+  "invoice_date": "2026-09-18",
+  "supplier": {
+    "name": "ИП Орлов Андрей Сергеевич",
+    "tax_id": "667901234567"
+  },
+  "buyer": {
+    "name": "ООО Каскад Софт",
+    "tax_id": "7709123456"
+  },
+  "currency": "RUB",
+  "subtotal": 122760.0,
+  "vat_amount": 24552.0,
+  "total_amount": 147312.0,
+  "line_items": [
+    {
+      "description": "Облачная лицензия системы учета для пользователей",
+      "quantity": 10.0,
+      "unit": "пользователь",
+      "unit_price": 4500.0,
+      "line_total": 45000.0
+    },
+    {
+      "description": "Настройка интеграции с интернет-банком",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 38000.0,
+      "line_total": 38000.0
+    },
+    {
+      "description": "Перенос справочников из CSV в учетную систему",
+      "quantity": 1.0,
+      "unit": "услуга",
+      "unit_price": 24000.0,
+      "line_total": 24000.0
+    },
+    {
+      "description": "Обучение сотрудников в дистанционном формате с записью занятия",
+      "quantity": 2.0,
+      "unit": "занятие",
+      "unit_price": 12500.0,
+      "line_total": 25000.0
+    },
+    {
+      "description": "Скидка за единовременную оплату 7 процентов",
+      "quantity": 1.0,
+      "unit": "скидка",
+      "unit_price": -9240.0,
+      "line_total": -9240.0
+    }
+  ]
+}

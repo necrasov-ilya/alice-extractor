@@ -1,0 +1,61 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "ПР-4187/26",
+  "invoice_date": "2026-02-19",
+  "supplier": {
+    "name": "АО Издательский дом Точка отсчёта",
+    "tax_id": "770912345678"
+  },
+  "buyer": {
+    "name": "ООО Городской центр дополнительного образования Вектор",
+    "tax_id": "7726123456"
+  },
+  "currency": "RUB",
+  "subtotal": 208260.00,
+  "vat_amount": 20826.00,
+  "total_amount": 229086.00,
+  "line_items": [
+    {
+      "description": "Учебно-методический комплект Школа проектных решений",
+      "quantity": 12,
+      "unit": "комплект",
+      "unit_price": 8450.00,
+      "line_total": 101400.00
+    },
+    {
+      "description": "Рабочая тетрадь Практикум по инженерной графике",
+      "quantity": 35,
+      "unit": "экземпляр",
+      "unit_price": 1280.00,
+      "line_total": 44800.00
+    },
+    {
+      "description": "Плакат Безопасность в лаборатории, формат А1",
+      "quantity": 18,
+      "unit": "штука",
+      "unit_price": 790.00,
+      "line_total": 14220.00
+    },
+    {
+      "description": "Сборник кейсов для наставников",
+      "quantity": 20,
+      "unit": "экземпляр",
+      "unit_price": 2175.00,
+      "line_total": 43500.00
+    },
+    {
+      "description": "Короб архивный для комплектов",
+      "quantity": 12,
+      "unit": "штука",
+      "unit_price": 120.00,
+      "line_total": 1440.00
+    },
+    {
+      "description": "Доставка тиража до г. Екатеринбурга",
+      "quantity": 1,
+      "unit": "услуга",
+      "unit_price": 2900.00,
+      "line_total": 2900.00
+    }
+  ]
+}

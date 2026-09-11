@@ -1,0 +1,54 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "28-0926",
+  "invoice_date": "2026-09-22",
+  "supplier": {
+    "name": "ООО Пиксельный Офис",
+    "tax_id": "7808123456"
+  },
+  "buyer": {
+    "name": "ООО Северная Экспедиция",
+    "tax_id": "7805123457"
+  },
+  "currency": "RUB",
+  "subtotal": 526150.0,
+  "vat_amount": 105230.0,
+  "total_amount": 631380.0,
+  "line_items": [
+    {
+      "description": "Монитор профессиональный 27 дюймов IPS с регулируемой подставкой",
+      "quantity": 7.0,
+      "unit": "шт.",
+      "unit_price": 41900.0,
+      "line_total": 293300.0
+    },
+    {
+      "description": "Док-станция USB-C с блоком питания",
+      "quantity": 7.0,
+      "unit": "шт.",
+      "unit_price": 18750.0,
+      "line_total": 131250.0
+    },
+    {
+      "description": "Клавиатура механическая с русской раскладкой",
+      "quantity": 7.0,
+      "unit": "шт.",
+      "unit_price": 7600.0,
+      "line_total": 53200.0
+    },
+    {
+      "description": "Настройка рабочих мест с переносом профилей",
+      "quantity": 7.0,
+      "unit": "рабочее место",
+      "unit_price": 5500.0,
+      "line_total": 38500.0
+    },
+    {
+      "description": "Доставка и упаковка оборудования",
+      "quantity": 1.0,
+      "unit": "партия",
+      "unit_price": 9900.0,
+      "line_total": 9900.0
+    }
+  ]
+}

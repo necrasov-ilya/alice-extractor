@@ -1,0 +1,27 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "СЧ-2025/08-19",
+  "invoice_date": "2025-07-25",
+  "supplier": {
+    "name": "ООО Безопасный Контур",
+    "tax_id": "7817015004"
+  },
+  "buyer": {
+    "name": "АО Северный Университет",
+    "tax_id": "770301600015"
+  },
+  "currency": "RUB",
+  "subtotal": 97000,
+  "vat_amount": 19400,
+  "total_amount": 116400,
+  "line_items": [
+    {
+      "description": "Аудит информационной безопасности малого предприятия",
+      "quantity": 1,
+      "unit": "усл.",
+      "unit_price": 97000,
+      "line_total": 97000
+    }
+  ]
+}
+
